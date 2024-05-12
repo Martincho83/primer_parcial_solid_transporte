@@ -1,0 +1,11 @@
+Principio de Responsabilidad Única: Las clases Tren y Avion tienen responsabilidades duales:
+controlan su estado y también interactúan con la base de datos a través del método guardarEnBD(). 
+Esto viola el principio SRP, ya que una clase debería tener una sola razón para cambiar.
+
+Principio de Inversión de Dependencias (DIP): Las clases Tren y Avion tienen una dependencia 
+directa de TransporteRepository en el método guardarEnBD(), lo que hace que sea difícil de probar y 
+acopla directamente estas clases con la implementación específica de TransporteRepository.
+
+Principio Abierto/Cerrado: Si se quisiera agregar un nuevo tipo de transporte, como un barco,
+se tendría que modificar el código existente para manejar este nuevo tipo de transporte.
+
